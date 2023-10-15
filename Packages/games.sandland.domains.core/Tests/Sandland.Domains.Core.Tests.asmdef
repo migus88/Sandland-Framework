@@ -1,0 +1,19 @@
+{
+    "name": "Sandland.Domains.Core.Tests",
+    "rootNamespace": "Sandland.Domains.Core",
+    "references": [
+        "Sandland.Core.Runtime",
+        "Sandland.Domains.Core.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

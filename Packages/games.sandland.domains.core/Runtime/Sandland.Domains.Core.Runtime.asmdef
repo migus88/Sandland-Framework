@@ -1,0 +1,21 @@
+{
+    "name": "Sandland.Domains.Core.Runtime",
+    "rootNamespace": "Sandland.Domains.Core",
+    "references": [
+        "UniTask",
+        "UniTask.Addressables",
+        "VContainer",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "Sandland.Core.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

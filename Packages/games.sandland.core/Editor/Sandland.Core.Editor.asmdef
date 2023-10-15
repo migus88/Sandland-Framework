@@ -1,0 +1,19 @@
+{
+    "name": "Sandland.Core.Editor",
+    "rootNamespace": "Sandland.Core",
+    "references": [
+        "Sandland.Core.Runtime",
+        "Sandland.SceneTool.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

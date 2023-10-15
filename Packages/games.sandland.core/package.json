@@ -1,0 +1,13 @@
+{
+  "name": "games.sandland.core",
+  "displayName": "[Sandland] Core",
+  "version": "0.0.1",
+  "unity": "2022.3",
+  "description": "Core functions of Sandland Core (more info later)",
+  "dependencies": {
+    "com.cysharp.unitask": "^2.4.1",
+    "jp.hadashikick.vcontainer": "^1.13.2",
+    "com.unity.addressables": "^1.21.18",
+    "com.sandland.scene-tools": "^0.12.1"
+  }
+}
