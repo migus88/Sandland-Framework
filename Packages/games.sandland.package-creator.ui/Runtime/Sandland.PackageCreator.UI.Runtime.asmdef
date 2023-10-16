@@ -1,0 +1,23 @@
+{
+    "name": "Sandland.PackageCreator.UI.Runtime",
+    "rootNamespace": "Sandland.PackageCreator.UI",
+    "references": [
+        "Sandland.PackageCreator.UI.Shared"
+    ],
+    "includePlatforms": [
+        
+    ],
+    "excludePlatforms": [
+        
+    ],
+    "unsafeFlags": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "defineConstraints": [
+        
+    ],
+    "versionDefines": [
+        
+    ],
+    "noEngineReferences": false
+}

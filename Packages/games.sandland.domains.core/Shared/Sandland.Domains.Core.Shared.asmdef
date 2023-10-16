@@ -1,0 +1,16 @@
+{
+    "name": "Sandland.Domains.Core.Shared",
+    "rootNamespace": "Sandland.Domains.Core",
+    "references": [
+    "GUID:332f3e173b0de47d0b3a7594fe22f257",
+    "GUID:2b71e5c0028ed496d87bab94a6fc3f92",
+    "GUID:b2ee0ba905c4b4a0f93f1f8721272e69"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

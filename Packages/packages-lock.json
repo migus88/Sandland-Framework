@@ -194,6 +194,20 @@
         "games.sandland.core": "0.0.1"
       }
     },
+    "games.sandland.package-creator": {
+      "version": "file:games.sandland.package-creator",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "games.sandland.core": "0.0.1"
+      }
+    },
+    "games.sandland.package-creator.ui": {
+      "version": "file:games.sandland.package-creator.ui",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "jp.hadashikick.vcontainer": {
       "version": "1.13.2",
       "depth": 0,
