@@ -194,6 +194,14 @@
         "games.sandland.core": "0.0.1"
       }
     },
+    "games.sandland.editor-ui.core": {
+      "version": "file:games.sandland.editor-ui.core",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "games.sandland.core": "0.0.1"
+      }
+    },
     "games.sandland.package-manager": {
       "version": "file:games.sandland.package-manager",
       "depth": 0,

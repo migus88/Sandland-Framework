@@ -1,0 +1,19 @@
+{
+    "name": "Sandland.EditorUI.Core.Editor",
+    "rootNamespace": "Sandland.EditorUI.Core",
+    "references": [
+        "Sandland.EditorUI.Core.Shared",
+        "Sandland.Core.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

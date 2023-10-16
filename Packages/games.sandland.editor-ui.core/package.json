@@ -1,0 +1,10 @@
+{
+	"name": "games.sandland.editor-ui.core",
+	"displayName": "[Sandland] Editor UI Core",
+	"version": "0.0.1",
+	"unity": "2022.3",
+	"description": "Core functionality for Sandland Editor UI",
+	"dependencies": {
+		"games.sandland.core": "0.0.1"
+	}
+}

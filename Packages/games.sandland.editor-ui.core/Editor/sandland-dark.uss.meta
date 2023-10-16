@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1df905dc6c95a430bbf802bcae36d159
+labels:
+- Prop
+- Terrain
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 12385, guid: 0000000000000000e000000000000000, type: 0}
+  disableValidation: 0

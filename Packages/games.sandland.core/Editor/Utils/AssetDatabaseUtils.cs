@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Sandland.Core.Editor.Data;
-using Sandland.SceneTool.Editor.Common.Utils;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,11 +13,11 @@ namespace Sandland.Core.Editor.Utils
 {
     public static class AssetDatabaseUtils
     {
-        public static VisualTreeAsset FindAndLoadVisualTreeAsset(string name = null) =>
-            FindAndLoadAsset<VisualTreeAsset>(name);
+        public static VisualTreeAsset FindAndLoadVisualTreeAsset(string name = null, string packageName = null) =>
+            FindAndLoadAsset<VisualTreeAsset>(name, packageName);
 
-        public static StyleSheet FindAndLoadStyleSheet(string name = null) => FindAndLoadAsset<StyleSheet>(name);
-        
+        public static StyleSheet FindAndLoadStyleSheet(string name = null, string packageName = null) => FindAndLoadAsset<StyleSheet>(name, packageName);
+
         public static string GetRelativePath(this string fullPath) => fullPath.StartsWith(Application.dataPath)
             ? $"Assets{fullPath.Substring(Application.dataPath.Length)}"
             : string.Empty;
@@ -37,12 +36,12 @@ namespace Sandland.Core.Editor.Utils
             }
         }
 
-        public static T FindAndLoadAsset<T>(string name = null) where T : Object
+        public static T FindAndLoadAsset<T>(string name = null, string packageName = null) where T : Object
         {
             // TODO: Reuse code from FindAssets
             var typeName = typeof(T).Name;
             var query = string.IsNullOrEmpty(name) ? $"t:{typeName}" : $"{name} t:{typeName}";
-            var guids = AssetDatabase.FindAssets(query);
+            var guids = AssetDatabase.FindAssets(query, packageName != null ? new[] { $"Packages/{packageName}" } : null);
 
             switch (guids.Length)
             {
@@ -96,16 +95,17 @@ namespace Sandland.Core.Editor.Utils
                 {
                     continue;
                 }
-                
+
                 SceneFileInfo info;
-                
+
                 if (IsAssetAddressable(asset.Guid, out var address))
                 {
                     info = SceneFileInfo.Create.Addressable(address, asset.Name, asset.Path, asset.Guid, asset.Labels);
                 }
                 else if (IsAssetInBundle(assetsInBundles, asset.Path, out var bundleName))
                 {
-                    info = SceneFileInfo.Create.AssetBundle(asset.Name, asset.Path, asset.Guid, bundleName, asset.Labels);
+                    info = SceneFileInfo.Create.AssetBundle(asset.Name, asset.Path, asset.Guid, bundleName,
+                        asset.Labels);
                 }
                 else if (sceneBuildIndexes.ContainsSceneGuid(asset.Guid, out var buildIndex))
                 {
@@ -115,7 +115,7 @@ namespace Sandland.Core.Editor.Utils
                 {
                     info = SceneFileInfo.Create.Default(asset.Name, asset.Path, asset.Guid, asset.Labels);
                 }
-                
+
                 result.Add(info);
             }
 
@@ -166,7 +166,7 @@ namespace Sandland.Core.Editor.Utils
             labels.Add(label);
             AssetDatabase.SetLabels(asset, labels.ToArray());
         }
-        
+
         public static bool IsAssetAddressable(string guid, out string address)
         {
             address = string.Empty;
@@ -193,10 +193,11 @@ namespace Sandland.Core.Editor.Utils
             return false;
 #endif
         }
-        
-        public static bool IsAssetInBundle(Dictionary<string, string> assetsInBundles, string assetPath, out string bundleName) 
+
+        public static bool IsAssetInBundle(Dictionary<string, string> assetsInBundles, string assetPath,
+            out string bundleName)
             => assetsInBundles.TryGetValue(assetPath, out bundleName);
-        
+
         public static Dictionary<string, string> GetAssetsInBundles() =>
             AssetDatabase
                 .GetAllAssetBundleNames()

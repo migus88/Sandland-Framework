@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Sandland.Domains.Core.Shared.Utils;
@@ -13,7 +14,7 @@ namespace Sandland.PackageManager.Editor.Logic
     {
         [MenuItem("Tools/Create Test Package")]
         public static void TestPackageCreation() =>
-            new PackagesService().CreateNewPackage("games.sandland.package-manager.ui", "[Sandland] Package Manager UI", "UI for Sandland Package Manager", "Sandland.PackageManager.UI");
+            new PackagesService().CreateNewPackage("games.sandland.editor-ui.core", "[Sandland] Editor UI Core", "Core functionality for Sandland Editor UI", "Sandland.EditorUI.Core");
         
         public void CreateNewPackage(string bundleId, string displayName, string description, string rootNamespace = null)
         {
@@ -34,12 +35,39 @@ namespace Sandland.PackageManager.Editor.Logic
             rootNamespace ??= bundleId;
             
             CreateAssemblyDefinitions(folderStructure, rootNamespace);
+            CreatePackageInfoClass(folderStructure, rootNamespace, bundleId);
             
             AssetDatabase.ImportAsset(folderStructure.Root);
 
             // Refresh Unity Asset Database
             AssetDatabase.Refresh();
             Client.Resolve();
+        }
+
+        public static void CreatePackageInfoClass(PackageFolderStructureModel folderStructure, string rootNamespace, string packageBundleId)
+        {
+            const string filename = "CurrentPackageInfo.cs";
+            
+            // We do it for each assembly, because the class should remain internal in order to prevent usage of a class from another package
+            var paths = new Dictionary<CodeAssembly, string>
+            {
+                [CodeAssembly.Shared] = Path.Combine(folderStructure.SharedCodePath, filename),
+                [CodeAssembly.Runtime] = Path.Combine(folderStructure.RuntimeCodePath, filename),
+                [CodeAssembly.Editor] = Path.Combine(folderStructure.EditorCodePath, filename),
+                [CodeAssembly.Tests] = Path.Combine(folderStructure.TestsCodePath, filename)
+            };
+
+            foreach (var path in paths)
+            {            
+                var content = $@"namespace {rootNamespace}.{path.Key}
+{{
+    internal static class CurrentPackageInfo
+    {{
+        public static readonly string PackageName = ""{packageBundleId}"";
+    }}
+}}";
+                File.WriteAllText(path.Value, content);
+            }
         }
 
         private static void CreateAssemblyDefinitions(PackageFolderStructureModel folderStructure, string rootNamespace)
