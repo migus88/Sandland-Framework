@@ -214,7 +214,10 @@
       "version": "file:games.sandland.package-manager.ui",
       "depth": 0,
       "source": "embedded",
-      "dependencies": {}
+      "dependencies": {
+        "games.sandland.core": "0.0.1",
+        "games.sandland.editor-ui.core": "0.0.1"
+      }
     },
     "jp.hadashikick.vcontainer": {
       "version": "1.13.2",
