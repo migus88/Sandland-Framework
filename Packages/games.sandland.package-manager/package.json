@@ -1,0 +1,10 @@
+{
+  "name": "games.sandland.package-manager",
+  "displayName": "[Sandland] Package Manager",
+  "version": "0.0.1",
+  "unity": "2022.3",
+  "description": "Toolset for managing embedded packages",
+  "dependencies": {
+    "games.sandland.core": "0.0.1"
+  }
+}

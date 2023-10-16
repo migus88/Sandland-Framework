@@ -1,0 +1,23 @@
+{
+    "name": "Sandland.PackageManager.UI.Editor",
+    "rootNamespace": "Sandland.PackageManager.UI",
+    "references": [
+        "Sandland.PackageManager.UI.Shared"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [
+        
+    ],
+    "unsafeFlags": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "defineConstraints": [
+        
+    ],
+    "versionDefines": [
+        
+    ],
+    "noEngineReferences": false
+}

@@ -194,16 +194,16 @@
         "games.sandland.core": "0.0.1"
       }
     },
-    "games.sandland.package-creator": {
-      "version": "file:games.sandland.package-creator",
+    "games.sandland.package-manager": {
+      "version": "file:games.sandland.package-manager",
       "depth": 0,
       "source": "embedded",
       "dependencies": {
         "games.sandland.core": "0.0.1"
       }
     },
-    "games.sandland.package-creator.ui": {
-      "version": "file:games.sandland.package-creator.ui",
+    "games.sandland.package-manager.ui": {
+      "version": "file:games.sandland.package-manager.ui",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
