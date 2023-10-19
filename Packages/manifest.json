@@ -2,7 +2,6 @@
   "dependencies": {
     "com.cathei.linqgen": "0.2.6",
     "com.cysharp.unitask": "2.4.1",
-    "com.sandland.scene-tools": "0.12.1",
     "com.unity.addressables": "1.21.18",
     "com.unity.ide.rider": "3.0.26",
     "com.unity.render-pipelines.universal": "14.0.8",

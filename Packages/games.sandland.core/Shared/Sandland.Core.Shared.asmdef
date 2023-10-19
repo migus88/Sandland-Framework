@@ -1,14 +1,7 @@
 {
-    "name": "Sandland.Core.Runtime",
+    "name": "Sandland.Core.Shared",
     "rootNamespace": "Sandland.Core",
-    "references": [
-        "UniTask",
-        "UniTask.Addressables",
-        "VContainer",
-        "Unity.Addressables",
-        "Unity.ResourceManager",
-        "Sandland.Core.Shared"
-    ],
+    "references": [ ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

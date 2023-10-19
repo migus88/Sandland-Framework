@@ -1,12 +1,10 @@
-using Sandland.Core.Editor.Utils;
-using Sandland.EditorUI.Core.Editor;
 using Sandland.EditorUI.Core.Editor.Services;
 using Sandland.EditorUI.Core.Editor.Utils;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Editor.Views
+namespace Sandland.EditorUI.Core.Editor.Views.Base
 {
     public abstract class SandlandEditorWindow : EditorWindow
     {
@@ -23,7 +21,7 @@ namespace Editor.Views
         
         public static void ShowWindow<TWindow>(Texture2D overrideIcon = null) where TWindow : SandlandEditorWindow
         {
-            var window = EditorWindow.GetWindow<TWindow>();
+            var window = GetWindow<TWindow>();
             window.InitWindow(overrideIcon);
         }
         
@@ -56,17 +54,8 @@ namespace Editor.Views
         
         public virtual void CreateGUI()
         {
-            var visualTree = AssetDatabaseUtils.FindAndLoadVisualTreeAsset(VisualTreeName, PackageName);
-            visualTree.CloneTree(rootVisualElement);
-
-            _theme = ThemesService.GetSelectedTheme();
+            rootVisualElement.InitElement(PackageName, VisualTreeName, StyleSheetName, GlobalStyleSheetName, ThemesService.GetSelectedTheme());
             
-            var globalStyleSheet = AssetDatabaseUtils.FindAndLoadStyleSheet(GlobalStyleSheetName, CurrentPackageInfo.PackageName);
-            var styleSheet = AssetDatabaseUtils.FindAndLoadStyleSheet(StyleSheetName, PackageName);
-            
-            rootVisualElement.styleSheets.Add(_theme);
-            rootVisualElement.styleSheets.Add(globalStyleSheet);
-            rootVisualElement.styleSheets.Add(styleSheet);
             InitGui();
         }
 

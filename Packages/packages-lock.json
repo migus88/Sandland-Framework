@@ -16,13 +16,6 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
-    "com.sandland.scene-tools": {
-      "version": "0.12.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
     "com.unity.addressables": {
       "version": "1.21.18",
       "depth": 0,
@@ -179,8 +172,7 @@
       "dependencies": {
         "com.cysharp.unitask": "^2.4.1",
         "jp.hadashikick.vcontainer": "^1.13.2",
-        "com.unity.addressables": "^1.21.18",
-        "com.sandland.scene-tools": "^0.12.1"
+        "com.unity.addressables": "^1.21.18"
       }
     },
     "games.sandland.domains.core": {

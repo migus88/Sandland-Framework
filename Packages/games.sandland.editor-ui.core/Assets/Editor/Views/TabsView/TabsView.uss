@@ -1,0 +1,44 @@
+TabsView, TabsView > #sandland--tabsview-root {
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+TabsView TabsViewLabels {
+    flex-direction: row;
+    align-self: flex-start;
+    background-color: var(--secondary-background-color);
+    width: 100%;
+    padding-left: var(--default-spacing);
+}
+
+TabsView TabsViewLabels > TabsViewLabel {
+    background-color: var(--primary-color);
+    justify-content: center;
+    padding: var(--header-vertical-spacing) var(--header-horizontal-spacing);
+    border-top-left-radius: var(--corner-radius);
+    border-top-right-radius: var(--corner-radius);
+    margin-top: var(--default-spacing);
+    margin-left: var(--default-spacing);
+}
+
+TabsView TabsViewLabels > TabsViewLabel, TabsView TabsViewLabels > TabsViewLabel * {
+    font-size: var(--header-3-size);
+}
+
+TabsView TabsViewLabels > TabsViewLabel:hover {
+    background-color: var(--highlight-color);
+}
+
+TabsView TabsViewLabels > TabsViewLabel.selected {
+    background-color: var(--accent-color);
+    color: var(--font-accent-color);
+}
+
+TabsView TabsViewContents {
+    flex-grow: 1;
+}
+
+TabsView TabsViewContents > TabsViewContent {
+    flex-grow: 1;
+    padding: var(--default-spacing);
+}

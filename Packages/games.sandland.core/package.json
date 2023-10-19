@@ -7,7 +7,6 @@
   "dependencies": {
     "com.cysharp.unitask": "^2.4.1",
     "jp.hadashikick.vcontainer": "^1.13.2",
-    "com.unity.addressables": "^1.21.18",
-    "com.sandland.scene-tools": "^0.12.1"
+    "com.unity.addressables": "^1.21.18"
   }
 }

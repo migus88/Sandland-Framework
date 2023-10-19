@@ -3,7 +3,7 @@
     "rootNamespace": "Sandland.Core",
     "references": [
         "Sandland.Core.Runtime",
-        "Sandland.SceneTool.Runtime"
+        "Sandland.Core.Shared"
     ],
     "includePlatforms": [
         "Editor"

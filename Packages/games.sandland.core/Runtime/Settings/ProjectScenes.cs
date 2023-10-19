@@ -1,5 +1,4 @@
-using Sandland.Core.Utils;
-using UnityEditor;
+using Sandland.Core.Shared.Utils;
 using UnityEngine;
 
 namespace Sandland.Core.Settings

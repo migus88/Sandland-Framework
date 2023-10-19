@@ -1,30 +1,22 @@
 :root {
-    --primary-background-color: #1d1b29;
-    --secondary-background-color: #2a2e3a;
-    --element-background-color: #181621;
-    --primary-text-color: #f9fafc;
-    --secondary-text-color: #9e9da3;
-    --disabled-text-color: #615c73;
-    --accent-color: #b05894;
-    --selection-color: #48406a;
-    --button-color: #3c3560;
-    --button-hover-color: #483d80;
-    --button-press-color: #372e68;
+    --primary-color: #313131;
+    --highlight-color: #4e4e4e;
+    --accent-color: #434343;
+    
+    --font-accent-color: #94c4ff;
+    
+    --primary-background-color: #181818;
+    --secondary-background-color: #252525;
 
-    --border-radius: 13px;
-    --field-border-radius: 10px;
+    --header-1-size: 30px;    
+    --header-2-size: 24px;
+    --header-3-size: 18px;
+    --regular-text-size: 14px;
     
-    --font-size: 15px;
-    --small-font-size: 12px;
-    --title-font-size: 20px;
-    --title-secondary-font-size: 17px;
+    --default-spacing: 5px;
+    --header-horizontal-spacing: 12px;
+    --header-vertical-spacing: 3px;
     
-    --content-margin: 12px;
-    
-    --content-padding: 12px;
-    --field-padding: 5px;
-    
-    --button-min-width: 40px;
-    --list-icons-size: 50px;
-    --favorites-size: 30px;
+    --corner-radius: 7px;
+    --default-border-width: 1px;
 }
