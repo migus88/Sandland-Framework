@@ -10,12 +10,13 @@ using UnityEditor.PackageManager;
 
 namespace Sandland.PackageManager.Editor.Logic
 {
-    internal class PackagesService
+    public interface IPackagesService
     {
-        [MenuItem("Tools/Create Test Package")]
-        public static void TestPackageCreation() =>
-            new PackagesService().CreateNewPackage("games.sandland.editor-ui.core", "[Sandland] Editor UI Core", "Core functionality for Sandland Editor UI", "Sandland.EditorUI.Core");
-        
+        void CreateNewPackage(string bundleId, string displayName, string description, string rootNamespace = null);
+    }
+
+    public class PackagesService : IPackagesService
+    {
         public void CreateNewPackage(string bundleId, string displayName, string description, string rootNamespace = null)
         {
             if (bundleId == null || bundleId.Contains(' ') || bundleId.Last() == '.')
@@ -40,11 +41,11 @@ namespace Sandland.PackageManager.Editor.Logic
             AssetDatabase.ImportAsset(folderStructure.Root);
 
             // Refresh Unity Asset Database
-            AssetDatabase.Refresh();
             Client.Resolve();
+            AssetDatabase.Refresh();
         }
 
-        public static void CreatePackageInfoClass(PackageFolderStructureModel folderStructure, string rootNamespace, string packageBundleId)
+        private static void CreatePackageInfoClass(PackageFolderStructureModel folderStructure, string rootNamespace, string packageBundleId)
         {
             const string filename = "CurrentPackageInfo.cs";
             
@@ -114,7 +115,7 @@ namespace Sandland.PackageManager.Editor.Logic
                 DisplayName = name,
                 Version = "0.0.1",
                 MinUnityVersion = $"{unityVersion.Year}.{unityVersion.Major}",
-                Description = description
+                Description = description.Replace("\n", @"\n")
             };
 
             File.WriteAllText(Path.Combine(folderStructure.Root, "package.json"), package.ToJson());

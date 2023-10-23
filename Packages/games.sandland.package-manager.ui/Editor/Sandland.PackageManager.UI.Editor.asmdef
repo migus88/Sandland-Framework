@@ -4,7 +4,9 @@
     "references": [
         "Sandland.PackageManager.UI.Shared",
         "Sandland.EditorUI.Core.Editor",
-        "Sandland.EditorUI.Core.Shared"
+        "Sandland.EditorUI.Core.Shared",
+        "Sandland.Core.Shared",
+        "Sandland.PackageManager.Editor"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+	xmlns:sandland="Sandland.EditorUI.Core.Editor.Views"
+    xsi:noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd"
+>
+	<sandland:TabsView name="tabs-view">
+		<sandland:TabsViewLabels>
+			<sandland:TabsViewLabel content-id="new-package-creation">
+				<engine:Label text="New Package" />
+			</sandland:TabsViewLabel>
+			<sandland:TabsViewLabel content-id="package-dependencies-management">
+				<engine:Label text="Dependencies" />
+			</sandland:TabsViewLabel>
+		</sandland:TabsViewLabels>
+		<sandland:TabsViewContents>
+			<sandland:TabsViewContent name="new-package-creation">
+				<engine:Template src="NewPackageTab.uxml" name="new-package-creation-template"/>
+				<engine:Instance template="new-package-creation-template" />
+			</sandland:TabsViewContent>
+			<sandland:TabsViewContent name="package-dependencies-management">
+				<engine:Label text="Not yet implemented."/>
+			</sandland:TabsViewContent>
+		</sandland:TabsViewContents>
+	</sandland:TabsView>
+	
+</engine:UXML>

@@ -1,3 +1,11 @@
 .invisible {
     display: none;
 }
+
+TextField.error > TextInput {
+    border-color: red;
+}
+
+Label.error {
+    color: red;
+}

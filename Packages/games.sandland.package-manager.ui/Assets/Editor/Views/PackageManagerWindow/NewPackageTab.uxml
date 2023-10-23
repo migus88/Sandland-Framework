@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement class="sandland-form">
+        <ui:TextField name="package-display-name" label="Display Name" />
+        <ui:TextField name="package-bundle-id" label="Bundle ID" />
+        <ui:TextField name="package-root-namespace" label="Root Namespace" />
+        <ui:TextField name="package-description" label="Description" multiline="true" />
+        <ui:Button name="package-create-button" text="Create" display-tooltip-when-elided="true" />
+        <ui:Label name="package-validation-result" class="error invisible" text="Test" />
+    </ui:VisualElement>
+</ui:UXML>
