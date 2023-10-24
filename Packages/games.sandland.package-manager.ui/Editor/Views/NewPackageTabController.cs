@@ -141,7 +141,7 @@ namespace Sandland.PackageManager.UI.Editor.Views
                 throw new BundleIdException("Bundle ID is empty");
             }
 
-            var pattern = @"^([a-z]{2,}\.)+[a-z]{2,}$";
+            var pattern = @"^([a-z-]{2,}\.)+[a-z-]{2,}$";;
             var isValid = Regex.IsMatch(_bundleIdText.text, pattern, RegexOptions.IgnoreCase);
 
             if (!isValid)
