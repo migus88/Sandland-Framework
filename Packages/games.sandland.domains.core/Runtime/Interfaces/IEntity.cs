@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Sandland.Domains.Core.Interfaces
 {
-    public interface IEntity
+    public interface IEntity : IDisposable
     {
         event Action Enabled;
         event Action Disabled;

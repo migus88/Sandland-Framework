@@ -1,6 +1,6 @@
 namespace Sandland.Domains.Core.Interfaces.Services
 {
-    public interface IRandomService
+    public interface IRandomService : IService
     {
         void Reset(int seed);
         void Reset();

@@ -51,5 +51,10 @@ namespace Sandland.Domains.Core.Services
         {
             return (float)_random.NextDouble() * (maxValue - minValue) + minValue;
         }
+
+        public void Dispose()
+        {
+            // TODO release managed resources here
+        }
     }
 }

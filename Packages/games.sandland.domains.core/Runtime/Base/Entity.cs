@@ -34,5 +34,7 @@ namespace Sandland.Domains.Core.Base
         protected virtual void OnEnableInternal() { }
         protected virtual void OnDisableInternal() { }
         protected virtual void OnDestroyInternal() { }
+
+        public virtual void Dispose() { }
     }
 }

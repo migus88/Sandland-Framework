@@ -8,6 +8,7 @@ using Sandland.Domains.Core.Interfaces.Services;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
+using VContainer.Unity;
 
 namespace Sandland.Domains.Core.Services
 {
@@ -98,6 +99,11 @@ namespace Sandland.Domains.Core.Services
             }
 
             completionSource.TrySetCanceled(cancellationToken);
+        }
+
+        public void Dispose()
+        {
+            // TODO release managed resources here
         }
     }
 }
