@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Sandland.Domains.Core.Base
 {
-    public class Entity : MonoBehaviour, IEntity
+    public abstract class Entity : MonoBehaviour, IEntity
     {
         public event Action Enabled;
         public event Action Disabled;
