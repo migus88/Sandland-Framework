@@ -4,6 +4,6 @@ namespace Sandland.Domains.Core.Interfaces.Settings
 {
     public interface IGameLoadingSettings
     {
-        GameDomain[] ScenesToLoad { get; set; }
+        GameDomainAddress[] ScenesToLoad { get; set; }
     }
 }

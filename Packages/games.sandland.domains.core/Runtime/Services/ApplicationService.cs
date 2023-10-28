@@ -14,10 +14,10 @@ namespace Sandland.Domains.Core.Services
 {
     public class ApplicationService : IDomainService
     {
-        private readonly Dictionary<GameDomain, SceneInstance> _activeAddressableDomains = new();
-        private readonly Dictionary<GameDomain, UniTask> _domainLoadingTasks = new();
+        private readonly Dictionary<GameDomainAddress, SceneInstance> _activeAddressableDomains = new();
+        private readonly Dictionary<GameDomainAddress, UniTask> _domainLoadingTasks = new();
 
-        public UniTask LoadDomain(GameDomain address, CancellationToken cancellationToken = default)
+        public UniTask LoadDomain(GameDomainAddress address, CancellationToken cancellationToken = default)
         {
             var isDomainAlreadyLoaded = _activeAddressableDomains.ContainsKey(address);
 
@@ -33,7 +33,7 @@ namespace Sandland.Domains.Core.Services
                 : LoadDomainInternal(address, cancellationToken);
         }
 
-        public async UniTask UnloadDomain(GameDomain address, CancellationToken cancellationToken = default)
+        public async UniTask UnloadDomain(GameDomainAddress address, CancellationToken cancellationToken = default)
         {
             var isDomainLoaded = _activeAddressableDomains.TryGetValue(address, out var sceneInstance);
 
@@ -48,7 +48,7 @@ namespace Sandland.Domains.Core.Services
             _activeAddressableDomains.Remove(address);
         }
 
-        private async UniTask LoadDomainInternal(GameDomain address, CancellationToken cancellationToken)
+        private async UniTask LoadDomainInternal(GameDomainAddress address, CancellationToken cancellationToken)
         {
             var isSceneLoaded = false;
             SceneInstance sceneInstance = default;
@@ -77,7 +77,7 @@ namespace Sandland.Domains.Core.Services
             completionSource.TrySetResult();
         }
 
-        private async Task<SceneInstance> LoadAddressableScene(GameDomain address, CancellationToken cancellationToken, UniTaskCompletionSource completionSource)
+        private async Task<SceneInstance> LoadAddressableScene(GameDomainAddress address, CancellationToken cancellationToken, UniTaskCompletionSource completionSource)
         {
             _domainLoadingTasks.Add(address, completionSource.Task);
 

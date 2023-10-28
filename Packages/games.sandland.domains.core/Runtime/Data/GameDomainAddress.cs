@@ -4,12 +4,12 @@ using UnityEngine;
 namespace Sandland.Domains.Core.Data
 {
     [Serializable]
-    public class GameDomain
+    public class GameDomainAddress
     {
         [field:SerializeField] public string Value { get; set; }
 
-        public GameDomain() { }
-        public GameDomain(string value)
+        public GameDomainAddress() { }
+        public GameDomainAddress(string value)
         {
             Value = value;
         }
@@ -21,14 +21,14 @@ namespace Sandland.Domains.Core.Data
                 return false;
             }
             
-            return Value == ((GameDomain)obj).Value;
+            return Value == ((GameDomainAddress)obj).Value;
         }
     
         public override int GetHashCode() => Value?.GetHashCode() ?? 0;
 
         public override string ToString() => Value;
 
-        public static implicit operator string(GameDomain domain) => domain.ToString();
-        public static implicit operator GameDomain(string value) => new(value);
+        public static implicit operator string(GameDomainAddress domainAddress) => domainAddress.ToString();
+        public static implicit operator GameDomainAddress(string value) => new(value);
     }
 }

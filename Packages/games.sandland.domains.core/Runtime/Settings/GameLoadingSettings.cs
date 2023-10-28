@@ -8,6 +8,6 @@ namespace Sandland.Domains.Core.Settings
     [CreateAssetMenu(fileName = nameof(GameLoadingSettings), menuName = MenuItems.Settings + nameof(GameLoadingSettings), order = 0)]
     public class GameLoadingSettings : ScriptableObject, IGameLoadingSettings
     {
-        [field:SerializeField] public GameDomain[] ScenesToLoad { get; set; }
+        [field:SerializeField] public GameDomainAddress[] ScenesToLoad { get; set; }
     }
 }

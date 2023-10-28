@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Sandland.Domains.Core.Editor.PropertyDrawers
 {
-    [CustomPropertyDrawer(typeof(GameDomain))]
+    [CustomPropertyDrawer(typeof(GameDomainAddress))]
     public class GameDomainPropertyDrawer : PropertyDrawer
     {
         private const string Domain = "Domain";
