@@ -12,7 +12,7 @@ using VContainer.Unity;
 
 namespace Sandland.Domains.Core.Services
 {
-    public class ApplicationService : IDomainService
+    public class DomainService : IDomainService
     {
         private readonly Dictionary<GameDomainAddress, SceneInstance> _activeAddressableDomains = new();
         private readonly Dictionary<GameDomainAddress, UniTask> _domainLoadingTasks = new();
