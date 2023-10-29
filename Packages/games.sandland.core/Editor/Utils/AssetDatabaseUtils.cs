@@ -9,6 +9,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 
+#if SANDLAND_ADDRESSABLES
+using UnityEngine.AddressableAssets;
+using UnityEditor.AddressableAssets;
+#endif
+
 namespace Sandland.Core.Editor.Utils
 {
     public static class AssetDatabaseUtils

@@ -3,7 +3,10 @@
     "rootNamespace": "Sandland.Core",
     "references": [
         "Sandland.Core.Runtime",
-        "Sandland.Core.Shared"
+        "Sandland.Core.Shared",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "Unity.Addressables.Editor"
     ],
     "includePlatforms": [
         "Editor"
