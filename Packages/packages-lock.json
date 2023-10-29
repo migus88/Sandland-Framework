@@ -170,9 +170,9 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.cysharp.unitask": "^2.4.1",
-        "jp.hadashikick.vcontainer": "^1.13.2",
-        "com.unity.addressables": "^1.21.18"
+        "com.cysharp.unitask": "2.4.1",
+        "jp.hadashikick.vcontainer": "1.13.2",
+        "com.unity.addressables": "1.21.18"
       }
     },
     "games.sandland.domains.core": {
