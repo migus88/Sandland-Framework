@@ -211,6 +211,12 @@
         "games.sandland.editor-ui.core": "0.0.1"
       }
     },
+    "games.sandland.scene-management": {
+      "version": "file:games.sandland.scene-management",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "jp.hadashikick.vcontainer": {
       "version": "1.13.2",
       "depth": 0,

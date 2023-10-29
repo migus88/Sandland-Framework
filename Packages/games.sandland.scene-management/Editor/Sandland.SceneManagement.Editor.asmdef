@@ -1,0 +1,23 @@
+{
+    "name": "Sandland.SceneManagement.Editor",
+    "rootNamespace": "Sandland.SceneManagement",
+    "references": [
+        "Sandland.SceneManagement.Shared"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [
+        
+    ],
+    "unsafeFlags": false,
+    "overrideReferences": false,
+    "autoReferenced": false,
+    "defineConstraints": [
+        
+    ],
+    "versionDefines": [
+        
+    ],
+    "noEngineReferences": false
+}
